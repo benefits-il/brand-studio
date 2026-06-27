@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--
+  Generic design-system showcase template for BUILD YOUR BRAND.
+  The design-system skill fills every {{...}} from the chosen preset and saves it as
+  design-system.html in the learner's folder, alongside a machine-readable design-tokens.css.
+  Hebrew-first, RTL-correct. Self-contained: no build step, no JavaScript required.
+  The only external request is the Google Fonts link.
+-->
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>מערכת-עיצוב — {{שם העסק}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{קישור Google Fonts לפי ה-preset}}" rel="stylesheet">
+<style>
+  :root{
+    /* צבעים */
+    --bg:{{--bg}}; --surface:{{--surface}}; --ink:{{--ink}}; --muted:{{--muted}};
+    --accent:{{--accent}}; --accent-strong:{{--accent-strong}}; --border:{{--border}};
+    --success:{{--success}}; --warning:{{--warning}}; --danger:{{--danger}};
+    /* טיפוגרפיה */
+    --font-head:{{פונט כותרות}}; --font-body:{{פונט גוף}};
+    /* רדיוס */
+    --radius-sm:{{--radius-sm}}; --radius:{{--radius}}; --radius-lg:{{--radius-lg}}; --radius-pill:{{--radius-pill}};
+    /* רמפת-צללים (רב-שכבתי בגוון, לא שחור-טהור) */
+    --shadow-1:{{--shadow-1}};
+    --shadow-2:{{--shadow-2}};
+    --shadow-3:{{--shadow-3}};
+    --shadow-4:{{--shadow-4}};
+    /* מרווחים */
+    --maxw:{{רוחב-תוכן מרבי}};
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:var(--font-body); color:var(--ink); background:var(--bg); line-height:1.55; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:48px 24px; }
+  h1,h2,h3{ font-family:var(--font-head); color:var(--ink); margin:0; }
+  h1{ font-size:44px; line-height:1.1; letter-spacing:-0.02em; }
+  h2{ font-size:26px; line-height:1.15; letter-spacing:-0.01em; margin:0 0 18px; }
+  .ltr{ direction:ltr; unicode-bidi:isolate; }
+  .lead{ color:var(--muted); font-size:18px; max-width:60ch; margin:10px 0 0; }
+  .archetype{ display:inline-block; font-family:var(--font-head); font-weight:700; font-size:13px;
+    color:var(--accent-strong); background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius-pill); padding:6px 14px; margin-bottom:14px; }
+  section{ padding:36px 0; border-top:1px solid var(--border); }
+  .muted{ color:var(--muted); font-size:14px; }
+  code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; }
+
+  /* צבעים */
+  .swatches{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px; }
+  .swatch{ border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:var(--surface); }
+  .swatch .chip{ height:72px; }
+  .swatch .meta{ padding:10px 12px; }
+  .swatch .role{ font-weight:600; font-size:14px; }
+  .swatch .hex{ direction:ltr; unicode-bidi:isolate; text-align:left; color:var(--muted); font-size:12px; }
+
+  /* טיפוגרפיה */
+  .type-row{ display:flex; align-items:baseline; gap:16px; padding:12px 0; border-bottom:1px dashed var(--border); }
+  .type-row:last-child{ border-bottom:0; }
+  .type-row .label{ width:120px; flex:none; color:var(--muted); font-size:13px; }
+  .t-display{ font-family:var(--font-head); font-size:48px; line-height:1.05; letter-spacing:-0.03em; }
+  .t-h2{ font-family:var(--font-head); font-size:32px; line-height:1.1; letter-spacing:-0.02em; }
+  .t-h3{ font-family:var(--font-head); font-size:22px; line-height:1.15; }
+  .t-body{ font-size:16px; line-height:1.55; }
+  .t-caption{ font-size:13px; color:var(--muted); }
+
+  /* כפתורים */
+  .btns{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+  .btn{ font-family:var(--font-head); font-weight:700; font-size:15px; cursor:pointer;
+    padding:10px 20px; border-radius:var(--radius); border:1px solid transparent;
+    transition:transform .12s ease, box-shadow .18s ease, background .18s ease; }
+  .btn:active{ transform:scale(.98); }
+  .btn-primary{ background:var(--accent); color:#fff; box-shadow:var(--shadow-1); }
+  .btn-primary:hover{ background:var(--accent-strong); box-shadow:var(--shadow-2); }
+  .btn-secondary{ background:transparent; color:var(--accent-strong); border-color:var(--border); }
+  .btn-secondary:hover{ background:var(--surface); }
+  .btn-ghost{ background:transparent; color:var(--ink); }
+  .btn-ghost:hover{ background:var(--surface); }
+  .btn-disabled{ background:var(--surface); color:var(--muted); border-color:var(--border);
+    cursor:not-allowed; opacity:.6; }
+
+  /* רכיבים */
+  .components{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+    padding:22px; box-shadow:var(--shadow-1); transition:box-shadow .2s ease, transform .2s ease; }
+  .card:hover{ box-shadow:var(--shadow-3); transform:translateY(-2px); }
+  .card h3{ font-size:18px; margin-bottom:8px; }
+  .field label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+  .field input{ width:100%; font-family:var(--font-body); font-size:15px; color:var(--ink);
+    background:var(--bg); border:1px solid var(--border); border-radius:var(--radius);
+    padding:10px 12px; outline:none; transition:border-color .15s ease, box-shadow .15s ease; }
+  .field input:focus{ border-color:var(--accent);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+  .badges{ display:flex; flex-wrap:wrap; gap:10px; }
+  .badge{ font-size:12px; font-weight:600; padding:4px 12px; border-radius:var(--radius-pill);
+    border:1px solid var(--border); }
+  .badge-success{ color:var(--success); background:color-mix(in srgb, var(--success) 14%, transparent);
+    border-color:color-mix(in srgb, var(--success) 35%, transparent); }
+  .badge-warning{ color:var(--warning); background:color-mix(in srgb, var(--warning) 16%, transparent);
+    border-color:color-mix(in srgb, var(--warning) 38%, transparent); }
+  .badge-danger{ color:var(--danger); background:color-mix(in srgb, var(--danger) 14%, transparent);
+    border-color:color-mix(in srgb, var(--danger) 35%, transparent); }
+
+  /* מרווחים */
+  .spaces{ display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; }
+  .space{ text-align:center; }
+  .space .bar{ background:var(--accent); border-radius:var(--radius-sm); width:28px; }
+  .space .n{ font-size:12px; color:var(--muted); margin-top:6px; direction:ltr; }
+
+  /* צללים */
+  .shadows{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:22px; }
+  .elev{ background:var(--surface); border-radius:var(--radius-lg); padding:22px; text-align:center;
+    border:1px solid var(--border); }
+  .elev.s1{ box-shadow:var(--shadow-1); }
+  .elev.s2{ box-shadow:var(--shadow-2); }
+  .elev.s3{ box-shadow:var(--shadow-3); }
+  .elev.s4{ box-shadow:var(--shadow-4); }
+
+  @media (max-width:720px){ h1{ font-size:34px; } .type-row{ flex-direction:column; gap:4px; } }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .btn:active{ transform:none; } .card:hover{ transform:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="archetype">{{שם ה-preset שנבחר}}</span>
+    <h1>מערכת-העיצוב של {{שם העסק}}</h1>
+    <p class="lead">{{משפט אחד שמסביר למה ה-preset הזה מתאים למותג}}</p>
+  </header>
+
+  <section>
+    <h2>צבעים</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--accent)"></div>
+        <div class="meta"><div class="role">הדגשה</div><div class="hex">{{--accent}}</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--accent-strong)"></div>
+        <div class="meta"><div class="role">הדגשה חזקה</div><div class="hex">{{--accent-strong}}</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ink)"></div>
+        <div class="meta"><div class="role">טקסט ראשי</div><div class="hex">{{--ink}}</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--muted)"></div>
+        <div class="meta"><div class="role">טקסט משני</div><div class="hex">{{--muted}}</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--surface); border-bottom:1px solid var(--border)"></div>
+        <div class="meta"><div class="role">משטח</div><div class="hex">{{--surface}}</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--bg); border-bottom:1px solid var(--border)"></div>
+        <div class="meta"><div class="role">רקע</div><div class="hex">{{--bg}}</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>טיפוגרפיה</h2>
+    <div class="type-row"><span class="label">Display · 48</span><span class="t-display">{{שם העסק}}</span></div>
+    <div class="type-row"><span class="label">כותרת · 32</span><span class="t-h2">כותרת ראשית של מקטע</span></div>
+    <div class="type-row"><span class="label">תת-כותרת · 22</span><span class="t-h3">תת-כותרת קצרה</span></div>
+    <div class="type-row"><span class="label">גוף · 16</span><span class="t-body">טקסט גוף רגיל, נוח לקריאה, גובה-שורה 1.55. כאן יושב רוב התוכן של העסק.</span></div>
+    <div class="type-row"><span class="label">משני · 13</span><span class="t-caption">שורת-עזר משנית, הערות וכיתובים.</span></div>
+    <p class="muted" style="margin-top:14px">כותרות: <span class="ltr">{{שם פונט כותרות}}</span> · גוף: <span class="ltr">{{שם פונט גוף}}</span> · tracking שלילי בגדלים הגדולים.</p>
+  </section>
+
+  <section>
+    <h2>כפתורים</h2>
+    <div class="btns">
+      <button class="btn btn-primary">פעולה ראשית</button>
+      <button class="btn btn-secondary">פעולה משנית</button>
+      <button class="btn btn-ghost">קישור</button>
+      <button class="btn btn-disabled" disabled>מושבת</button>
+    </div>
+    <p class="muted" style="margin-top:12px">ריחוף מחזק את הצבע ומרים את הצל; לחיצה מכווצת קלות. radius {{--radius}}, ריפוד 10px 20px.</p>
+  </section>
+
+  <section>
+    <h2>רכיבים</h2>
+    <div class="components">
+      <div class="card">
+        <h3>כרטיס</h3>
+        <p class="muted" style="margin:0">מסגרת דקה, צל רב-שכבתי שמתחזק בריחוף.</p>
+      </div>
+      <div class="card field">
+        <label for="ex">שדה קלט</label>
+        <input id="ex" type="text" placeholder="הקלד כאן" />
+        <p class="muted" style="margin:8px 0 0">תווית מעל השדה, טבעת-פוקוס בצבע ההדגשה.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px">תגיות-סטטוס</h3>
+        <div class="badges">
+          <span class="badge badge-success">פעיל</span>
+          <span class="badge badge-warning">בהמתנה</span>
+          <span class="badge badge-danger">נכשל</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>סולם-מרווחים</h2>
+    <div class="spaces">
+      <div class="space"><div class="bar" style="height:4px"></div><div class="n">4</div></div>
+      <div class="space"><div class="bar" style="height:8px"></div><div class="n">8</div></div>
+      <div class="space"><div class="bar" style="height:12px"></div><div class="n">12</div></div>
+      <div class="space"><div class="bar" style="height:16px"></div><div class="n">16</div></div>
+      <div class="space"><div class="bar" style="height:24px"></div><div class="n">24</div></div>
+      <div class="space"><div class="bar" style="height:32px"></div><div class="n">32</div></div>
+      <div class="space"><div class="bar" style="height:48px"></div><div class="n">48</div></div>
+      <div class="space"><div class="bar" style="height:64px"></div><div class="n">64</div></div>
+    </div>
+    <p class="muted" style="margin-top:14px">יחידת-בסיס 8px.</p>
+  </section>
+
+  <section>
+    <h2>רמפת-צללים</h2>
+    <div class="shadows">
+      <div class="elev s1">דרגה 1</div>
+      <div class="elev s2">דרגה 2</div>
+      <div class="elev s3">דרגה 3</div>
+      <div class="elev s4">דרגה 4</div>
+    </div>
+    <p class="muted" style="margin-top:14px">רב-שכבתי, בגוון — לא שחור-טהור, לא שכבה אחת.</p>
+  </section>
+
+</div>
+</body>
+</html>

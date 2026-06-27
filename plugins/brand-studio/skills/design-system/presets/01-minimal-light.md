@@ -20,12 +20,22 @@
 - **סקאלה:** 14 / 16 / 20 / 28 / 44
 - **letter-spacing בכותרות:** -0.02em
 
+## טוקנים סמנטיים (סטטוס)
+- `--success`: #16A34A
+- `--warning`: #D97706
+- `--danger`: #DC2626
+
 ## רדיוס
+- `--radius-sm`: 6px
 - `--radius`: 10px
+- `--radius-lg`: 14px
 - `--radius-pill`: 999px
 
-## צללים
-- `--shadow`: 0 1px 2px rgba(0,0,0,0.06)
+## רמפת-צללים (רב-שכבתי, ניטרלי, סאב-0.1)
+- `--shadow-1`: 0 1px 2px rgba(0,0,0,0.06)
+- `--shadow-2`: 0 1px 2px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.05)
+- `--shadow-3`: 0 2px 4px rgba(0,0,0,0.04), 0 8px 20px rgba(0,0,0,0.07)
+- `--shadow-4`: 0 4px 8px rgba(0,0,0,0.05), 0 16px 40px rgba(0,0,0,0.10)
 
 ## מרווחים
 - **יחידת-בסיס:** 8px

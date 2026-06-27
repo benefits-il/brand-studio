@@ -8,7 +8,7 @@
       "name": "brand-studio",
       "displayName": "BUILD YOUR BRAND",
       "source": "./plugins/brand-studio",
-      "description": "Answer three short questions about yourself and get a full personal brand pack — brand voice, a polished design system, a marketing email, a branded carousel, and a self-contained landing page — built into a folder you choose. Nothing to download. Carries no brand of its own; it builds yours.",
+      "description": "Answer three easy questions and get your brand built step by step, window after window — each step reads and writes the same folder. start-here generates a rich set of brand base-documents; then, each in its own window: a marketing email, a polished design system rendered as a real page with exported tokens, a branded carousel locked to those tokens, and a self-contained animated landing page. Nothing to download. Carries no brand of its own; it builds yours.",
       "author": {
         "name": "Benefits"
       },
