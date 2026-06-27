@@ -1,6 +1,6 @@
 ---
 name: write-marketing-email
-description: Step 2 of BUILD YOUR BRAND. Write a short marketing email in the brand's voice from the files in the working folder, save it as marketing-email.md, and offer to also save it as a Gmail draft if Gmail is connected. Use inside BUILD YOUR BRAND, when someone runs /marketing-email, or whenever someone wants a promotional email in their own voice without attaching anything.
+description: Step 2 of BUILD YOUR BRAND. Write a short marketing email in the brand's voice from the files in the working folder, save it as marketing-email.md, and create it as a Gmail draft when the Gmail connector is on. Use inside BUILD YOUR BRAND, when someone runs /marketing-email, or whenever someone wants a promotional email in their own voice without attaching anything.
 ---
 
 # Write a marketing email
@@ -20,7 +20,7 @@ The voice comes from `brand-voice.md`; the facts and the offer come from `brand-
 1. **Read the inputs** from the folder. Hold the voice from `brand-voice.md`, and the offer and facts from `brand-sheet.md`.
 2. **Write the email — subject plus body.** Keep it short and human: an opening that speaks to the reader, what the business offers, why it's relevant now, and one low-friction call-to-action. Stay inside the brand's voice; cut jargon and filler. Hebrew and RTL-correct unless the brand clearly operates in English; never mix a Hebrew and an English sentence together. No emojis.
 3. **Save it to the folder.** Fill the marketing-email template and save as `marketing-email.md` in the working folder, so the email exists as a file they can read, edit, and reuse.
-4. **Offer a Gmail draft.** If the Gmail connector is on (Customize → Connectors → Gmail), offer to also save the email as a Gmail **draft** — never send. If Gmail isn't connected, say so in one line and point them to turn it on later; do not block.
+4. **Create a Gmail draft.** This is part of the step, not an optional extra. If the Gmail connector is on (Customize → Connectors → Gmail), save the email directly as a Gmail **draft** through the connector — subject plus body — and tell the learner where to find it. You only ever draft, never send. If Gmail isn't connected, say so in one line and point them to turn it on (Customize → Connectors → Gmail), then re-run; the file is already saved either way, so do not block. Gmail is a first-party Cowork connector, not part of this plugin's `.mcp.json`.
 5. **Show the result** — the subject and body, then offer one variation (a shorter version, or a different opening) the learner can ask for.
 
 ## Then — hand off to the next window

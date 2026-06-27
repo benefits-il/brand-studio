@@ -1,6 +1,6 @@
 {
   "name": "brand-studio",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "BUILD YOUR BRAND — a five-step chain you run window after window, each step reading and writing the same working folder. Run start-here and answer three easy questions; it generates a rich set of brand base-documents (brand sheet, brand voice, social seed, welcome points, visual brief, outreach context, carousel outline, and a counter-example) into a folder you choose, then stops. Each later step runs in its own new window: a marketing email (with an optional Gmail draft), a polished design system rendered as a real page plus exported tokens, a branded carousel locked to those tokens, and a self-contained animated landing page. Nothing to download or attach. Bundles five chain skills, two sub-agents, slash commands, and an image connector. Carries no brand of its own — it builds yours.",
   "author": {
     "name": "Benefits"
