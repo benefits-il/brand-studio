@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Benefits · BUILD YOUR BRAND</title>
-<meta name="description" content="BUILD YOUR BRAND — a Cowork plugin. Answer three short questions about yourself and get a full personal brand pack: voice, design system, email, carousel, and a landing page, built into a folder you choose." />
+<meta name="description" content="BUILD YOUR BRAND — install or download the Cowork plugin. How to work with it is taught in the Benefits course lesson." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Varela+Round&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -111,6 +111,13 @@
   .install .step__t{ font-size:16px; line-height:1.55; color:var(--gray-700); }
   .install .step__t b{ color:var(--ink); font-family:'Rubik'; font-weight:700; }
 
+  .dl{ display:inline-flex; align-items:center; gap:10px; background:var(--anchor); color:#fff;
+    font-family:'Rubik'; font-weight:800; font-size:17px; text-decoration:none;
+    padding:14px 26px; border:2.5px solid var(--ink); border-radius:14px; box-shadow:5px 5px 0 0 var(--ink);
+    transition:box-shadow .15s, transform .15s; }
+  .dl:hover{ box-shadow:7px 7px 0 0 var(--ink); transform:translateY(-1px); }
+  .dl i{ font-size:20px; }
+
   .foot{ padding:34px 24px; background:var(--ink); color:#fff; text-align:center; margin-top:38px; }
   .foot__inner{ max-width:920px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;
     flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono',monospace; font-size:13px; color:#cbd5e1; }
@@ -155,86 +162,39 @@
 
 <section class="hero">
   <div class="wrap hero__inner">
-    <span class="kicker"><i class="ti ti-package"></i> Plugin · BUILD YOUR BRAND</span>
-    <h1>שלוש שאלות. <span class="hl">מותג שלם.</span></h1>
+    <span class="kicker"><i class="ti ti-package"></i> התקנת BUILD YOUR BRAND</span>
+    <h1>יוצרים נוכחות דיגיטלית עם <span class="hl">ערכת מותג מלאה</span></h1>
     <div class="lede reveal">
-      <p>מתקינים את ה-plugin, מריצים <span class="mono">start-here</span>, ועונים על שלוש שאלות קצרות על עצמכם. הוא בונה לכם חבילת-מותג שלמה — קול, מערכת-עיצוב, מייל, קרוסלה ועמוד-נחיתה — לתוך תיקייה שתבחרו, בלי שום הורדה. הכול על העולם שלכם. ה-plugin לא נושא מותג משלו; הוא בונה את שלכם.</p>
+      <p>הפלאגין BUILD YOUR BRAND מייצר עבורכם ערכת מותג אישי מלאה. בדף זה תוכלו להתקין או להוריד אותו, והוראות השימוש המלאות נמצאות בשיעור.</p>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-box"></i></span><h2>ארבעת הרכיבים</h2></div>
-    <p class="sec__intro reveal">plugin הוא הקופסה. הוא עוטף שלושה רכיבים מוכרים, ופותח דלת אחת החוצה. זה כל הרעיון.</p>
-    <div class="parts reveal">
-      <article class="part part--skills">
-        <span class="part__tag">סקילים</span>
-        <h3>סקיל לכל מלאכה</h3>
-        <p>השיטה. <span class="mono">start-here</span> מתזמר את כולם — קול-מותג, מערכת-עיצוב, מייל, קרוסלה ועמוד-נחיתה. כל סקיל קורא את דף-המותג שנבנה ומחיל אותו, כך שהכול יוצא אחיד.</p>
-      </article>
-      <article class="part part--conn">
-        <span class="part__tag">חיבורים</span>
-        <h3>שניים, בשתי דרכים</h3>
-        <p><span class="mono">Higgsfield</span> לתמונה ווידאו, מחווט ב-<span class="mono">.mcp.json</span>. <span class="mono">Gmail</span> לטיוטות, מדליקים פעם אחת ב-Connectors. הדלת אל מה שבחוץ.</p>
-      </article>
-      <article class="part part--cmd">
-        <span class="part__tag">פקודות</span>
-        <h3>הכפתורים</h3>
-        <p><span class="mono">/start-here</span> היא הדלת הראשית. <span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> נשארות לכל מלאכה בנפרד.</p>
-      </article>
-      <article class="part part--agents">
-        <span class="part__tag">סוכנים</span>
-        <h3>שניים</h3>
-        <p>הדמויות. <span class="mono">content-writer</span> כותב את המיילים והכיתובים; <span class="mono">visual-producer</span> מפיק את התמונות, הקרוסלה והסרטון.</p>
-      </article>
-    </div>
-    <p class="wraps reveal">ה-plugin הוא הקופסה. הוא <b>עוטף</b> את שלושת האחרים. מתקינים אותו פעם אחת, ומקבלים את כולם ביחד.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-wand"></i></span><h2>המלאכות</h2></div>
-    <p class="sec__intro reveal"><span class="mono">start-here</span> בונה את כל החבילה בבת אחת. מתחתיה, כל מלאכה זמינה גם בנפרד כפקודה.</p>
-    <table class="jobs reveal">
-      <thead><tr><th>פקודה</th><th>מה מקבלים</th><th>חיבור</th></tr></thead>
-      <tbody>
-        <tr><td><span class="mono">/start-here</span></td><td>חבילת-מותג שלמה לתיקייה שלכם</td><td>הכול</td></tr>
-        <tr><td><span class="mono">/outreach</span></td><td>מייל פנייה, טיוטה ב-Gmail</td><td>Gmail</td></tr>
-        <tr><td><span class="mono">/welcome</span></td><td>מייל ברוכים-הבאים, טיוטה ב-Gmail</td><td>Gmail</td></tr>
-        <tr><td><span class="mono">/post</span></td><td>פוסט: תמונה plus כיתוב</td><td>Higgsfield</td></tr>
-        <tr><td><span class="mono">/carousel</span></td><td>קרוסלה רב-שקופיות</td><td>Higgsfield</td></tr>
-        <tr><td><span class="mono">/reel</span></td><td>סרטון דמות קצר</td><td>Higgsfield</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-download"></i></span><h2>התקנה ב-Cowork</h2></div>
-    <p class="sec__intro reveal">מתקינים דרך הממשק — <b>לא מקלידים פקודת-התקנה</b>. ב-Cowork:</p>
+    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-download"></i></span><h2>התקנה ישירה</h2></div>
+    <p class="sec__intro reveal">ההתקנה מתבצעת ישירות מממשק המשתמש, לא באמצעות הרצת פקודה. ב-Cowork:</p>
     <div class="install reveal">
-      <div class="step"><span class="step__n">1</span><div class="step__t">נכנסים ל-<b>Customize</b> ואז ללשונית <b>Plugins</b>.</div></div>
-      <div class="step"><span class="step__n">2</span><div class="step__t">באזור <b>Personal plugins</b> לוחצים על ה-<b>+</b>, בוחרים <b>Add marketplace</b>, מקלידים <span class="mono">benefits-il/brand-studio</span>, ולוחצים <b>Browse plugins</b>.</div></div>
-      <div class="step"><span class="step__n">3</span><div class="step__t">מתקינים את <b>BUILD YOUR BRAND</b>.</div></div>
+      <div class="step"><span class="step__n">1</span><div class="step__t"><b>התאמה אישית ← פלאגינים</b></div></div>
+      <div class="step"><span class="step__n">2</span><div class="step__t"><b>פלאגינים אישיים</b> ← + ← <b>הוספת ספריית-פלאגינים</b> ← <span class="mono">benefits-il/brand-studio</span> ← <b>סיור בפלאגינים</b></div></div>
+      <div class="step"><span class="step__n">3</span><div class="step__t">התקינו את <b>BUILD YOUR BRAND</b></div></div>
     </div>
-    <p class="note reveal" style="margin-top:14px"><b>אם Personal plugins נראה ריק ואין כפתור Add marketplace:</b> ה-marketplace מופיע רק אחרי שכבר מותקן לפחות plugin אחד. מתקינים קודם plugin כלשהו (או מוסיפים את ה-<span class="mono">.zip</span> מעמוד-ההורדה), ואז האפשרות Add marketplace נפתחת. זו תקלת-פעם-ראשונה ידועה, לא בעיה ב-plugin.</p>
-    <p class="note reveal">שני החיבורים — מוסיפים כל אחד פעם אחת ברשימת ה-Connectors (ב-claude.ai: Settings ואז Connectors · ב-Cowork: Customize ואז Connectors). <span class="mono">Higgsfield</span> (תמונה ווידאו): בוחרים <b>Add custom connector</b>, קוראים לו Higgsfield, מדביקים את הכתובת <span class="mono">https://mcp.higgsfield.ai/mcp</span>, לוחצים Connect, ומתחברים עם חשבון Higgsfield — חינם, בלי כרטיס, בלי API key. ה-plugin כבר מפנה לכתובת הזו ב-<span class="mono">.mcp.json</span>; ההתחברות היא מה שמרשה לו לעבוד. <span class="mono">Gmail</span> (טיוטות): מדליקים את החיבור המובנה ומתחברים. המיילים נשמרים כטיוטה, אף פעם לא נשלחים. כדי להתחיל: מריצים <span class="mono">/start-here</span>.</p>
+    <p class="note reveal" style="margin-top:14px"><b>שימו לב:</b> ספריית-פלאגינים תופיע רק לאחר התקנת פלאגין אחד לפחות. התקינו פלאגין כלשהו תחילה, או הוסיפו ישירות את התיקייה שהורדתם.</p>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-id"></i></span><h2>מה start-here בונה לכם</h2></div>
-    <p class="sec__intro reveal">עונים על שלוש שאלות, וה-plugin בונה את כל החבילה לתוך תיקייה שתבחרו — בלי לצרף או להוריד כלום:</p>
-    <div class="install reveal">
-      <div class="step"><span class="step__n">1</span><div class="step__t"><b>קול-מותג</b> (<span class="mono" style="font-family:'JetBrains Mono',monospace;direction:ltr;unicode-bidi:isolate">brand-voice.md</span>) — איך המותג שלכם נשמע, נגזר מהתשובות שלכם.</div></div>
-      <div class="step"><span class="step__n">2</span><div class="step__t"><b>מערכת-עיצוב</b> (<span class="mono" style="font-family:'JetBrains Mono',monospace;direction:ltr;unicode-bidi:isolate">design-system.md</span>) — נבחרת אוטומטית מתוך שישה preset-ים מלוטשים, כך שזה תמיד יוצא נקי.</div></div>
-      <div class="step"><span class="step__n">3</span><div class="step__t"><b>מייל, קרוסלה ועמוד-נחיתה</b> — מוכנים, בקול ובעיצוב שלכם.</div></div>
-    </div>
-    <p class="note reveal" style="margin-top:16px">הכול על העולם שלכם. אפשר לערוך כל קובץ, או להריץ מחדש כל שלב בנפרד.</p>
+    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-package"></i></span><h2>הורדה ידנית</h2></div>
+    <p class="sec__intro reveal">מעדיפים לא להוסיף ספריית-פלאגינים? הורידו את הפלאגין הארוז והוסיפו את התיקייה ישירות תחת פלאגינים אישיים.</p>
+    <a class="dl reveal" href="dist/brand-studio.zip" download><i class="ti ti-download"></i> הורדת הפלאגין</a>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="note reveal">לצורך יצירת תמונות הקרוסלה יש לחבר את Higgsfield, בחינם ובאופן חד-פעמי. מדריך השימוש המלא נמצא בשיעור.</p>
+    <p class="note reveal" style="margin-top:10px"><b>כיצד לעבוד עם הפלאגין ← בשיעור הקורס.</b></p>
   </div>
 </section>
 
@@ -245,86 +205,39 @@
 
 <section class="hero">
   <div class="wrap hero__inner">
-    <span class="kicker"><i class="ti ti-package"></i> Plugin · BUILD YOUR BRAND</span>
-    <h1>Three questions. <span class="hl">A whole brand.</span></h1>
+    <span class="kicker"><i class="ti ti-package"></i> Install BUILD YOUR BRAND</span>
+    <h1>Build your online presence with a <span class="hl">complete brand pack</span></h1>
     <div class="lede reveal">
-      <p>Install the plugin, run <span class="mono">start-here</span>, and answer three short questions about yourself. It builds a full brand pack — voice, design system, email, carousel, and a landing page — into a folder you choose, with nothing to download. All about your own world. The plugin carries no brand of its own; it builds yours.</p>
+      <p>The BUILD YOUR BRAND plugin builds a complete personal brand pack for you. Install or download it from this page, and find the full instructions in the course lesson.</p>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-box"></i></span><h2>The four parts</h2></div>
-    <p class="sec__intro reveal">A plugin is the box. It wraps three familiar parts and opens one door to the outside. That is the whole idea.</p>
-    <div class="parts reveal">
-      <article class="part part--skills">
-        <span class="part__tag">Skills</span>
-        <h3>One per job</h3>
-        <p>The method. <span class="mono">start-here</span> orchestrates them all — brand voice, design system, email, carousel, and landing page. Each skill reads the brand sheet it built and applies it, so everything comes out consistent.</p>
-      </article>
-      <article class="part part--conn">
-        <span class="part__tag">Connectors</span>
-        <h3>Two, wired two ways</h3>
-        <p><span class="mono">Higgsfield</span> for image and video, wired in <span class="mono">.mcp.json</span>. <span class="mono">Gmail</span> for drafts, turned on once in Connectors. The door to the outside.</p>
-      </article>
-      <article class="part part--cmd">
-        <span class="part__tag">Commands</span>
-        <h3>The buttons</h3>
-        <p><span class="mono">/start-here</span> is the front door. <span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> stay available for each job on its own.</p>
-      </article>
-      <article class="part part--agents">
-        <span class="part__tag">Sub-agents</span>
-        <h3>Two</h3>
-        <p>The personas. <span class="mono">content-writer</span> writes the emails and captions; <span class="mono">visual-producer</span> makes the images, the carousel, and the video.</p>
-      </article>
-    </div>
-    <p class="wraps reveal">Plugin is the box. It <b>wraps</b> the other three. Install it once and you get them all together.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-wand"></i></span><h2>The jobs</h2></div>
-    <p class="sec__intro reveal"><span class="mono">start-here</span> builds the whole pack at once. Underneath it, every job is also available on its own as a command.</p>
-    <table class="jobs reveal">
-      <thead><tr><th>Command</th><th>What you get</th><th>Connector</th></tr></thead>
-      <tbody>
-        <tr><td><span class="mono">/start-here</span></td><td>A full brand pack in your folder</td><td>All</td></tr>
-        <tr><td><span class="mono">/outreach</span></td><td>Outreach email, drafted in Gmail</td><td>Gmail</td></tr>
-        <tr><td><span class="mono">/welcome</span></td><td>Welcome email, drafted in Gmail</td><td>Gmail</td></tr>
-        <tr><td><span class="mono">/post</span></td><td>Post: image plus caption</td><td>Higgsfield</td></tr>
-        <tr><td><span class="mono">/carousel</span></td><td>Multi-slide carousel</td><td>Higgsfield</td></tr>
-        <tr><td><span class="mono">/reel</span></td><td>Short character video</td><td>Higgsfield</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-download"></i></span><h2>Install in Cowork</h2></div>
-    <p class="sec__intro reveal">Install through the interface — <b>you don't type an install command</b>. In Cowork:</p>
+    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-download"></i></span><h2>Direct installation</h2></div>
+    <p class="sec__intro reveal">The plugin is installed directly from the user interface, not by running a command. In Cowork:</p>
     <div class="install reveal">
-      <div class="step"><span class="step__n">1</span><div class="step__t">Go to <b>Customize</b>, then the <b>Plugins</b> tab.</div></div>
-      <div class="step"><span class="step__n">2</span><div class="step__t">Under <b>Personal plugins</b> click the <b>+</b>, choose <b>Add marketplace</b>, type <span class="mono">benefits-il/brand-studio</span>, and click <b>Browse plugins</b>.</div></div>
-      <div class="step"><span class="step__n">3</span><div class="step__t">Install <b>BUILD YOUR BRAND</b>.</div></div>
+      <div class="step"><span class="step__n">1</span><div class="step__t">Customize → Plugins</div></div>
+      <div class="step"><span class="step__n">2</span><div class="step__t">Personal plugins → + → Add marketplace → type <span class="mono">benefits-il/brand-studio</span> → Browse plugins</div></div>
+      <div class="step"><span class="step__n">3</span><div class="step__t">Install <b>BUILD YOUR BRAND</b></div></div>
     </div>
-    <p class="note reveal" style="margin-top:14px"><b>If "Personal plugins" looks empty and there's no "Add marketplace":</b> a marketplace only shows up once at least one plugin is already installed. Install any plugin first (or add the <span class="mono">.zip</span> from the download page), and the Add marketplace option appears. Known first-time snag, not a plugin problem.</p>
-    <p class="note reveal">Add each connector once in your Connectors list (claude.ai: Settings then Connectors · Cowork: Customize then Connectors). <span class="mono">Higgsfield</span> (image and video): choose <b>Add custom connector</b>, name it Higgsfield, paste the URL <span class="mono">https://mcp.higgsfield.ai/mcp</span>, click Connect, and sign in with your Higgsfield account — free, no card, no API key. The plugin already points to this URL in <span class="mono">.mcp.json</span>; this sign-in is what authorizes it. <span class="mono">Gmail</span> (drafts): turn on the built-in connector and sign in. Emails are saved as drafts, never sent. To begin, run <span class="mono">/start-here</span>.</p>
+    <p class="note reveal" style="margin-top:14px"><b>Please note:</b> the plugins library only appears after at least one plugin is already installed. Install any plugin first, or add the downloaded folder directly.</p>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-id"></i></span><h2>What start-here builds for you</h2></div>
-    <p class="sec__intro reveal">You answer three questions, and the plugin builds the whole pack into a folder you choose — nothing to attach or download:</p>
-    <div class="install reveal">
-      <div class="step"><span class="step__n">1</span><div class="step__t"><b>Brand voice</b> (<span class="mono">brand-voice.md</span>) — how your brand sounds, derived from your answers.</div></div>
-      <div class="step"><span class="step__n">2</span><div class="step__t"><b>Design system</b> (<span class="mono">design-system.md</span>) — auto-picked from six polished presets, so it always comes out clean.</div></div>
-      <div class="step"><span class="step__n">3</span><div class="step__t"><b>Email, carousel, and a landing page</b> — finished, in your voice and your design.</div></div>
-    </div>
-    <p class="note reveal" style="margin-top:16px">All about your own world. Edit any file, or re-run any single step.</p>
+    <div class="sec__head reveal"><span class="sec__num"><i class="ti ti-package"></i></span><h2>Manual download</h2></div>
+    <p class="sec__intro reveal">Prefer not to add a library? Download the packaged plugin and add the folder directly under Personal plugins.</p>
+    <a class="dl reveal" href="dist/brand-studio.zip" download><i class="ti ti-download"></i> Download Plugin</a>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="note reveal">To use it, you will also need to connect Higgsfield once for free to generate the carousel images. The complete guide is in the lesson.</p>
+    <p class="note reveal" style="margin-top:10px"><b>How to work with the plugin → in the course lesson.</b></p>
   </div>
 </section>
 
