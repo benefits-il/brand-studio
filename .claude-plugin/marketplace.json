@@ -6,9 +6,9 @@
   "plugins": [
     {
       "name": "brand-studio",
-      "displayName": "Brand Studio",
+      "displayName": "BUILD YOUR BRAND",
       "source": "./plugins/brand-studio",
-      "description": "One plugin, five jobs. Turn any brand's raw drafts and rough briefs into finished, on-brand work — outreach and welcome emails, Instagram posts and reels, a branded carousel, and an AI-character video. Reads whatever brand you give it.",
+      "description": "Answer three short questions about yourself and get a full personal brand pack — brand voice, a polished design system, a marketing email, a branded carousel, and a self-contained landing page — built into a folder you choose. Nothing to download. Carries no brand of its own; it builds yours.",
       "author": {
         "name": "Benefits"
       },

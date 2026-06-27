@@ -1,7 +1,7 @@
 {
   "name": "brand-studio",
-  "version": "0.1.0",
-  "description": "One plugin, five jobs. Turn any brand's raw drafts and rough briefs into finished, on-brand work — outreach and welcome emails, Instagram posts and reels, a branded carousel, and an AI-character video. Bundles two sub-agents (content-writer, visual-producer), five skills, five slash commands, and an image/video connector. Reads whatever brand you give it; carries none of its own.",
+  "version": "0.2.0",
+  "description": "BUILD YOUR BRAND — install it, run start-here, answer three short questions about yourself, and get a full personal brand pack built into a folder you choose: brand sheet, brand voice, a polished design system (auto-picked from six presets), a marketing email, a branded carousel, and a self-contained HTML landing page. Nothing to download or attach. Bundles a start-here orchestrator plus skills for voice, design-system, email, carousel, video, and landing page, two sub-agents, slash commands, and an image/video connector. Carries no brand of its own — it builds yours.",
   "author": {
     "name": "Benefits"
   }

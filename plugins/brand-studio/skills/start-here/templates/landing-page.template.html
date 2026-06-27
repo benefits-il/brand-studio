@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+  Generic landing-page template for BUILD YOUR BRAND.
+  make-landing-page fills every {{...}} from the learner's design-system.md (tokens),
+  brand-voice.md (copy tone), and brand-sheet.md (facts), then saves as landing-page.html
+  in the learner's folder. Hebrew-first, RTL-correct. No build step, no external CSS.
+-->
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{שם העסק}}</title>
+<meta name="description" content="{{תיאור קצר של העסק}}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{קישור Google Fonts לפי מערכת-העיצוב}}" rel="stylesheet">
+<style>
+  :root{
+    --bg:{{--bg}}; --surface:{{--surface}}; --ink:{{--ink}}; --muted:{{--muted}};
+    --accent:{{--accent}}; --accent-strong:{{--accent-strong}}; --border:{{--border}};
+    --radius:{{--radius}}; --shadow:{{--shadow}};
+    --font-head:{{פונט כותרות}}; --font-body:{{פונט גוף}};
+    --maxw:{{רוחב-תוכן מרבי}};
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:var(--font-body); color:var(--ink); background:var(--bg); line-height:1.6; }
+  h1,h2,h3{ font-family:var(--font-head); color:var(--ink); margin:0 0 .4em; }
+  .ltr{ direction:ltr; unicode-bidi:isolate; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+
+  header.top{ padding:18px 0; border-bottom:1px solid var(--border); }
+  .top .wrap{ display:flex; align-items:center; gap:12px; }
+  .logo{ font-family:var(--font-head); font-weight:800; color:var(--accent-strong); font-size:20px; }
+
+  .hero{ padding:72px 0 40px; }
+  .hero h1{ font-size:clamp(32px,6vw,56px); line-height:1.05; }
+  .hero p{ font-size:20px; color:var(--muted); max-width:56ch; }
+  .cta{ display:inline-block; margin-top:24px; background:var(--accent); color:#fff;
+    font-family:var(--font-head); font-weight:700; text-decoration:none;
+    padding:14px 28px; border-radius:var(--radius); box-shadow:var(--shadow); }
+
+  .sec{ padding:40px 0; }
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:24px; box-shadow:var(--shadow); }
+  .card h3{ font-size:20px; }
+  .card p{ color:var(--muted); margin:0; }
+
+  footer.foot{ padding:32px 0; border-top:1px solid var(--border); color:var(--muted); }
+  @media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap"><span class="logo">{{שם העסק}}</span></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>{{כותרת-על בקול המותג}}</h1>
+    <p>{{משפט-משנה שמסביר מה העסק נותן ולמי}}</p>
+    <a class="cta" href="#contact">{{טקסט קריאה-לפעולה}}</a>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>{{כותרת מקטע — מה אנחנו עושים}}</h2>
+    <div class="grid">
+      <article class="card"><h3>{{יתרון 1}}</h3><p>{{הסבר קצר}}</p></article>
+      <article class="card"><h3>{{יתרון 2}}</h3><p>{{הסבר קצר}}</p></article>
+      <article class="card"><h3>{{יתרון 3}}</h3><p>{{הסבר קצר}}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <h2>{{כותרת קריאה-לפעולה}}</h2>
+    <p>{{משפט סיום בקול המותג}}</p>
+    <a class="cta" href="{{קישור או mailto}}">{{טקסט הפעולה}}</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">{{שם העסק}} · {{שורת-סיום קצרה}}</div>
+</footer>
+
+</body>
+</html>

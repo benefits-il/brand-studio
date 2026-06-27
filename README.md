@@ -1,38 +1,40 @@
-# Brand Studio — a generic content plugin for Cowork
+# BUILD YOUR BRAND — a Cowork plugin
 
-One plugin, five jobs, any brand. Hand it a brand pack — a brand sheet, voice guidelines, and a brief — and it produces finished, on-brand work: emails, social posts, a carousel, an AI-character video. It carries no brand of its own. This repo is the marketplace and the landing page.
+Install it, answer three short questions about yourself, and get a full personal brand pack — brand voice, a polished design system, a marketing email, a branded carousel, and a self-contained landing page — built for you into a folder you choose, with nothing to download. This repo is the marketplace and the landing page.
 
-> Built for the Benefits AI course (unit 3.2 — what a plugin is) as the generic engine learners install and point at any brand pack. The Tuesday brand pack and demo page live in a separate repo (`benefits-il/tuesday`).
+> Built for the Benefits AI course (unit 3.2 — what a plugin is). The learner installs one plugin and watches it run several skills in sequence on their own brand. The internal engine is brand-agnostic and stays named `brand-studio`; the learner-facing name is **BUILD YOUR BRAND**.
 
 ## What's here
 
 - `index.html` — the landing page (also the GitHub Pages site).
 - `.claude-plugin/marketplace.json` — the marketplace registry. Add this repo as a marketplace in Cowork.
-- `plugins/brand-studio/` — the plugin: a generic studio that does five jobs. Reads a brand pack you give it. Bundles five skills, two sub-agents (`content-writer`, `visual-producer`), five `/` commands, and an image/video connector.
+- `plugins/brand-studio/` — the plugin: a `start-here` orchestrator plus skills for voice, design-system, email, carousel, video, and a landing page; two sub-agents (`content-writer`, `visual-producer`); slash commands; and an image/video connector.
 - `dist/` — the packaged plugin download.
 
-## Install in Cowork
+## Install in Cowork — through the UI
 
-In Cowork, open `/plugin` and run:
+Plugins install from the **interface**, not by typing a command:
 
-```
-/plugin marketplace add benefits-il/brand-studio
-/plugin install brand-studio@brand-studio
-```
+1. Open **Customize → Plugins**.
+2. Under **Personal plugins**, click the **+**, choose **Add marketplace**, enter `benefits-il/brand-studio`, then **Browse plugins**.
+3. Install **BUILD YOUR BRAND**.
 
-The name after `@` is this marketplace's `name` field. For a local test before the repo is public, point `add` at the folder path.
+> **If "Personal plugins" looks empty and there's no "Add marketplace":** a marketplace only appears once at least one plugin is already installed. Install any plugin first (or add the packaged `.zip` from the download page), and the **Add marketplace** option shows up. Known first-time snag, not a plugin problem.
 
-Two connectors. Add each once in your Connectors list. **Higgsfield** (image and video): **Add custom connector** → name it `Higgsfield` → paste `https://mcp.higgsfield.ai/mcp` → **Connect** → sign in with a free account (the plugin already points to this URL in its `.mcp.json`). **Gmail** (email drafts): turn on the built-in connector and sign in. Then attach a brand pack (a brand sheet, voice guidelines, and a brief) before running a command.
+Then add the two connectors once, in your Connectors list. **Higgsfield** (image and video): **Add custom connector** → name it `Higgsfield` → paste `https://mcp.higgsfield.ai/mcp` → **Connect** → sign in with a free account (the plugin already points to this URL in its `.mcp.json`). **Gmail** (email drafts): turn on the built-in connector and sign in. To begin, run **`/start-here`**.
 
-## The five jobs
+## What start-here builds
 
-| Command | Job | Agent | Connector |
-|---|---|---|---|
-| `/outreach` | Outreach email, drafted in Gmail | content-writer | Gmail |
-| `/welcome` | Branded welcome email | content-writer | Gmail |
-| `/post` | Instagram post or reel — image plus caption | visual-producer + content-writer | Higgsfield |
-| `/carousel` | Multi-slide branded carousel | visual-producer | Higgsfield |
-| `/reel` | Short AI-character video | visual-producer | Higgsfield |
+| Step | File in your folder |
+|---|---|
+| brand sheet | `brand-sheet.md` |
+| brand voice | `brand-voice.md` |
+| design system (auto-picked from 6 presets) | `design-system.md` |
+| marketing email | `marketing-email.md` (+ optional Gmail draft) |
+| branded carousel | `carousel/` |
+| landing page | `landing-page.html` |
+
+The individual jobs stay available as commands: `/outreach`, `/welcome`, `/post`, `/carousel`, `/reel`.
 
 ## Package the plugin
 

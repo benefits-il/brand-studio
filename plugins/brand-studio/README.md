@@ -1,50 +1,48 @@
-# Brand Studio
+# BUILD YOUR BRAND
 
-One plugin. Five jobs. Any brand.
+Install it, answer three short questions about yourself, and get a full personal brand pack — built for you, into a folder you choose, with nothing to download.
 
-`brand-studio` is a Claude plugin that turns a brand's raw drafts and rough briefs into finished, on-brand work. You give it a brand pack — a brand sheet, a set of voice guidelines, and the messy "before" materials — and it produces the polished "after": emails, social posts, a carousel, a character video.
+This is a Claude plugin. A plugin is the box: it wraps several skills, a couple of sub-agents, slash commands, and a connector, and you install the whole set at once. That packaging is the point of the lesson — and **start-here** shows it live by running five of those skills in sequence.
 
-It carries no brand of its own. Point it at one brand pack and it works for that brand; swap in another and it works for that one instead. The brand is data you attach, never anything baked into the code.
+## What it does
 
-## The four parts (this is the whole point)
+You run **start-here**. It asks which folder to work in, asks three short questions (who you are · what you do and for whom · a project you're proud of), and then builds your brand pack into that folder, in order:
 
-A plugin is the box. It wraps the other three.
+1. `brand-sheet.md` — your facts, filled from your answers.
+2. `brand-voice.md` — how your brand sounds (built from your answers, no writing samples needed).
+3. `design-system.md` — a polished design system, auto-picked from six presets to fit you.
+4. `marketing-email.md` — a short marketing email in your voice (optionally also a Gmail draft).
+5. `carousel/` — a branded multi-slide carousel.
+6. `landing-page.html` — a self-contained landing page in your design and voice.
 
-- **Skills** — five of them, one per job. The method.
-- **Sub-agents** — two of them. The personas that do the work: `content-writer` and `visual-producer`.
-- **Commands** — five slash commands. The buttons you press.
-- **Connector** — the door to an outside service. This plugin bundles one (Higgsfield, for images and video) and uses one you already have (Gmail).
+You never attach or download anything. Everything is about your own world, not a demo brand.
 
-## The five jobs
+## The parts (this is what "a plugin" means)
 
-| Command | Job | Agent | Connector |
-|---|---|---|---|
-| `/outreach` | An outreach email, drafted in the brand's voice | content-writer | Gmail (draft) |
-| `/welcome` | A branded welcome email | content-writer | Gmail (draft) |
-| `/post` | An Instagram post or reel — image plus caption | visual-producer + content-writer | Higgsfield (image) |
-| `/carousel` | A multi-slide branded carousel | visual-producer | Higgsfield (image) |
-| `/reel` | A short AI-character video | visual-producer | Higgsfield (video) |
+- **Skills** — `start-here` (the orchestrator) plus `build-brand-voice`, `select-design-system`, `write-marketing-email`, `make-branded-carousel`, `make-landing-page`, and the original `write-outreach-email`, `write-welcome-email`, `make-social-post`, `make-character-video`.
+- **Sub-agents** — `content-writer` and `visual-producer`.
+- **Commands** — `/start-here` is the front door. `/outreach`, `/welcome`, `/post`, `/carousel`, `/reel` stay available as individual jobs.
+- **Connector** — Higgsfield (images and video) is bundled in `.mcp.json`; Gmail (email drafts) is a first-party connector you turn on once.
 
-## Install
+## Install in Cowork — through the UI
 
-In Cowork: **Customize → Personal plugins**.
+Plugins install from the **interface**, not by typing a command. In Cowork:
 
-- From this marketplace: `/plugin marketplace add benefits-il/brand-studio` then `/plugin install brand-studio@brand-studio`.
-- Or add the packaged plugin folder directly (the `.zip` from the download page).
+1. Open **Customize → Plugins**.
+2. Under **Personal plugins**, click the **+**.
+3. Choose **Add marketplace** and enter `benefits-il/brand-studio`, then **Browse plugins**.
+4. Install **BUILD YOUR BRAND**.
 
-## The two connectors
+> **If "Personal plugins" looks empty and there's no "Add marketplace":** a marketplace only shows up once you already have at least one plugin installed. Install any plugin first (or add the packaged `.zip` from the download page), and the **Add marketplace** option appears. This is a known first-time snag, not a problem with the plugin.
 
-This plugin has two connectors, wired two different ways — that difference is itself worth seeing.
+Then turn on the two connectors once, in your Connectors list (claude.ai: **Settings → Connectors** · Cowork: **Customize → Connectors**):
+- **Higgsfield** (images and video): **Add custom connector** → name it `Higgsfield` → paste `https://mcp.higgsfield.ai/mcp` → **Connect** → sign in with a free Higgsfield account (no card, no API key). The plugin already points to this URL in its `.mcp.json`; this sign-in is what authorizes it.
+- **Gmail** (email drafts): turn on the built-in connector and sign in. Emails are always saved as a **draft**, never sent.
 
-- **Higgsfield (images and video)** — the plugin points to it in `.mcp.json` (`https://mcp.higgsfield.ai/mcp`). Add it once as a connector: **Settings → Connectors** (claude.ai) or **Customize → Connectors** (Cowork) → **Add custom connector** → name it `Higgsfield` → paste `https://mcp.higgsfield.ai/mcp` → **Connect** → sign in with a free Higgsfield account (no card, no API key; your account credits apply). The free tier gives a basic model with a watermark. The lever for good output on the free tier is a fully precise prompt — exactly what `visual-producer` builds for you from the brand sheet. Clean, watermark-free, HD output is an optional Higgsfield subscription (~$15/month).
-- **Gmail (email drafts)** — not in the plugin. Gmail is a first-party connector you turn on once in **Customize → Connectors → Gmail** (a normal sign-in). The email commands always create a *draft* — they never send.
+To start: run **`/start-here`** (or just say "תתחיל").
 
-## How the brand gets in
+## Package the plugin
 
-The plugin reads what you attach, never a brand baked into the code:
-
-- `brand-voice.md` — the voice guidelines. The writing voice comes from here. (Create it from your own materials with a voice plugin such as `brand-voice`, or write it by hand.)
-- `brand-sheet.md` — colors, mark, and company facts.
-- the raw "before" materials and per-job briefs — what each command turns into a finished piece.
-
-Attach the relevant files for the job, then run the command. The same plugin works for any brand whose pack you hand it.
+```
+pwsh ./scripts/package.ps1 -Src "plugins/brand-studio" -Name "brand-studio"
+```
